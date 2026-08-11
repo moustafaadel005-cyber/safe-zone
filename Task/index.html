@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe Zone - Anti-Bullying Awareness</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* 1. خلفية الصفحة والمتصفح */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%) !important;
+      color: #1a202c !important;
+      min-height: 100vh;
+      margin: 0;
+      padding-top: 75px; /* مسافة لمنع تداخل القائمة العلوية مع محتوى الصفحة */
+    }
+
+    /* 2. الهيدر والقائمة العلوية (Navbar) */
+    .navbar {
+      background-color: #121212 !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+    }
+
+    .navbar-brand {
+      color: #ffffff !important;
+      font-size: 1.5rem !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: rgba(255, 255, 255, 0.85) !important;
+      font-weight: 500;
+      margin: 0 4px;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: #0d6efd !important;
+    }
+
+    /* 3. جعل الأقسام شفافة لتظهر الخلفية المتدرجة */
+    section {
+      background: transparent !important;
+    }
+
+    .hero-section {
+      padding-top: 50px !important;
+    }
+
+    /* 4. تصميم الكروت البيضاء لكل العناصر */
+    .deci-card {
+      background-color: #ffffff !important;
+      border: 1px solid #cbd5e1 !important;
+      border-radius: 12px !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .deci-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    /* 5. ضبط ألوان النصوص ووضوحها */
+    h1, h2, h3, h4, h5, h6, .section-title {
+      color: #0f172a !important;
+      font-weight: 700 !important;
+    }
+
+    p, .lead, .text-muted, span, li {
+      color: #334155 !important;
+    }
+
+    /* خط تحت العناوين */
+    .section-title {
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 50%;
+      height: 3px;
+      background: #0d6efd;
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+
+    /* الصور داخل الكروت */
+    .card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+
+    /* الأزرار والحقول */
+    .custom-btn {
+      background-color: #0d6efd !important;
+      color: #ffffff !important;
+      border: none !important;
+      border-radius: 8px !important;
+      padding: 10px 24px !important;
+      font-weight: 600 !important;
+    }
+
+    .custom-btn:hover {
+      background-color: #0b5ed7 !important;
+    }
+
+    .form-control, .form-select {
+      background-color: #ffffff !important;
+      border: 1px solid #cbd5e1 !important;
+      color: #0f172a !important;
+      border-radius: 8px !important;
+    }
+
+    .custom-accordion .accordion-item {
+      background-color: #ffffff !important;
+      border: 1px solid #cbd5e1 !important;
+    }
+
+    .custom-accordion .accordion-button {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+    }
+
+    .custom-accordion .accordion-button:not(.collapsed) {
+      background-color: #e0f2fe !important;
+      color: #0369a1 !important;
+    }
+
+    footer {
+      background-color: #121212 !important;
+      color: #ffffff !important;
+    }
+
+    footer p {
+      color: #94a3b8 !important;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand fs-4 fw-bold" href="#">Safe Zone</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto fs-6">
+            <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About Bullying</a></li>
+            <li class="nav-item"><a class="nav-link" href="#roadmap">Action Plan</a></li>
+            <li class="nav-item"><a class="nav-link" href="#courses">Workshops</a></li>
+            <li class="nav-item"><a class="nav-link" href="#teacher-workshops">Teachers</a></li>
+            <li class="nav-item"><a class="nav-link" href="#signup">Sign Up</a></li>
+            <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero-section py-5 d-flex align-items-center">
+      <div class="container py-4">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h1 class="display-4 fw-bold mb-3">Take a Stand Against Bullying with Safe Zone</h1>
+            <p class="lead mb-4">Learn how to identify physical and verbal bullying, support victims, and create safe environments in schools and workplaces through effective intervention techniques.</p>
+            <a href="#courses" class="btn custom-btn btn-lg">Explore Anti-Bullying Workshops</a>
+          </div>
+          <div class="col-lg-6 text-center mt-4 mt-lg-0">
+            <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=700&q=80" alt="Supportive Hands" class="img-fluid rounded-3 shadow-lg">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-5">
+      <div class="container py-3">
+        <h2 class="section-title text-center mb-5 d-block text-center">Understanding Real-Life Bullying</h2>
+        <div class="row g-4 text-center">
+          <div class="col-md-4">
+            <div class="p-4 deci-card h-100">
+              <div class="fs-1 text-danger mb-3">👊</div>
+              <h4 class="fw-bold mb-2">Physical Bullying</h4>
+              <p class="small mb-0">Learn to recognize and stop behaviors like hitting, kicking, tripping, and damaging property.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-4 deci-card h-100">
+              <div class="fs-1 text-danger mb-3">🗣️</div>
+              <h4 class="fw-bold mb-2">Verbal Bullying</h4>
+              <p class="small mb-0">Understand the impact of name-calling, insults, teasing, and intimidating spoken words.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-4 deci-card h-100">
+              <div class="fs-1 text-danger mb-3">🤝</div>
+              <h4 class="fw-bold mb-2">Social Exclusion</h4>
+              <p class="small mb-0">Identify relational bullying, such as spreading rumors, public embarrassment, and leaving others out intentionally.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="py-5">
+      <div class="container py-3">
+        <h2 class="section-title text-center mb-5 d-block text-center">Anti-Bullying Action Plan</h2>
+        <div class="row g-3 text-center">
+          <div class="col-md-3">
+            <div class="p-4 deci-card"><h5 class="fw-bold">Step 1</h5><p class="mb-0 small">Recognize the Signs</p></div>
+          </div>
+          <div class="col-md-3">
+            <div class="p-4 deci-card"><h5 class="fw-bold">Step 2</h5><p class="mb-0 small">Empower Bystanders</p></div>
+          </div>
+          <div class="col-md-3">
+            <div class="p-4 deci-card"><h5 class="fw-bold">Step 3</h5><p class="mb-0 small">Support Victims</p></div>
+          </div>
+          <div class="col-md-3">
+            <div class="p-4 deci-card"><h5 class="fw-bold">Step 4</h5><p class="mb-0 small">Create Bully-Free Zones</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses" class="py-5">
+      <div class="container text-center py-3">
+        <h2 class="section-title mb-5 d-block text-center">Awareness Workshops</h2>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-5">
+            <div class="deci-card overflow-hidden h-100">
+              <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=80" class="w-100 card-img" alt="Intervention Workshop">
+              <div class="p-4">
+                <h3 class="fw-bold mb-2">Active Intervention Tactics</h3>
+                <p class="mb-0">Master proven techniques to safely intervene when witnessing physical or verbal bullying in person.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="deci-card overflow-hidden h-100">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" class="w-100 card-img" alt="Support Workshop">
+              <div class="p-4">
+                <h3 class="fw-bold mb-2">Building Victim Resilience</h3>
+                <p class="mb-0">Learn how to provide effective emotional support and resources to help victims of bullying recover.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="teacher-workshops" class="py-5">
+      <div class="container text-center py-3">
+        <h2 class="section-title mb-3 d-block text-center">Teacher Training & Resources</h2>
+        <p class="lead mb-5">Empowering educators with strategies to detect, address, and prevent bullying in classrooms and school environments.</p>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-5">
+            <div class="deci-card overflow-hidden h-100 text-start">
+              <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80" class="w-100 card-img" alt="Classroom Management Workshop">
+              <div class="p-4">
+                <span class="badge bg-primary mb-2">For Educators</span>
+                <h3 class="fw-bold mb-2">Classroom Bullying Intervention</h3>
+                <p class="mb-3">A practical guide for teachers on managing classroom dynamics, identifying subtle bullying behaviors, and taking immediate conflict-resolution steps.</p>
+                <ul class="small ps-3 mb-0">
+                  <li>Detecting hidden relational bullying</li>
+                  <li>De-escalating peer conflicts in class</li>
+                  <li>Creating a zero-tolerance policy</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="deci-card overflow-hidden h-100 text-start">
+              <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" class="w-100 card-img" alt="Parent Teacher Communication">
+              <div class="p-4">
+                <span class="badge bg-primary mb-2">For Educators</span>
+                <h3 class="fw-bold mb-2">Parent & Student Counseling</h3>
+                <p class="mb-3">Learn effective communication protocols to hold supportive dialogues with victims, perpetrators, and parents to build lasting solutions.</p>
+                <ul class="small ps-3 mb-0">
+                  <li>Conducting non-confrontational meetings</li>
+                  <li>Building individual action plans for students</li>
+                  <li>Long-term emotional follow-up techniques</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="signup" class="py-5">
+      <div class="container py-3">
+        <h2 class="section-title text-center mb-5 d-block text-center">Join the Movement</h2>
+        <div class="col-md-6 col-lg-5 mx-auto">
+          <div class="p-4 p-md-5 deci-card">
+            <form>
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Full Name</label>
+                <input type="text" class="form-control" placeholder="Enter your full name" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Email Address</label>
+                <input type="email" class="form-control" placeholder="Enter your email" required>
+              </div>
+              <div class="mb-4">
+                <label class="form-label fw-semibold">Select Workshop</label>
+                <select class="form-select">
+                  <option selected>Active Intervention Tactics</option>
+                  <option>Building Victim Resilience</option>
+                  <option>Classroom Bullying Intervention (Teachers)</option>
+                  <option>Parent & Student Counseling (Teachers)</option>
+                </select>
+              </div>
+              <button class="btn custom-btn w-100" type="submit">Register Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="py-5">
+      <div class="container text-center py-3">
+        <h2 class="section-title mb-5 d-block text-center">Frequently Asked Questions</h2>
+        <div class="col-md-8 mx-auto">
+          <div class="accordion custom-accordion" id="faqAccordion">
+            <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button fw-bold fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Who can participate in these workshops?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-start">These workshops are open to students, parents, teachers, employees, and anyone committed to stopping real-life bullying.</div>
+              </div>
+            </div>
+            <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed fw-bold fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  What is an 'Upstander'?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-start">An Upstander is someone who sees bullying happening and takes action to stop it or support the victim, rather than just watching as a bystander. We teach you how to be one.</div>
+              </div>
+            </div>
+            <div class="accordion-item mb-3 border-0 rounded-3 overflow-hidden">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed fw-bold fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Can I receive a certificate of completion?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-start">Yes, after completing a workshop and its associated assessment, you will receive a certificate of participation.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center py-4 border-top border-secondary">
+    <div class="container"><p class="mb-0">&copy; 2026 Safe Zone - Real World Solidarity. All Rights Reserved.</p></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
