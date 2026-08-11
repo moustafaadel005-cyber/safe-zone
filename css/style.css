@@ -1,0 +1,87 @@
+/* ===================================================
+   Safe Zone - Layout & Header Fix
+   =================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 1. Background */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%) !important;
+  color: #1a202c !important;
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 80px; /* مسافة لحماية الهيدر من التداخل */
+}
+
+/* 2. Fixed Solid Header (Navbar) */
+.navbar {
+  background-color: #121212 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+  z-index: 9999 !important;
+}
+
+.navbar-brand {
+  color: #ffffff !important;
+  font-size: 1.5rem !important;
+}
+
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #0d6efd !important;
+}
+
+/* 3. Hero Section Padding Fix */
+.hero-section {
+  padding-top: 40px !important;
+  background: transparent !important;
+}
+
+/* 4. White Cards for Text Sections */
+.deci-card, 
+#about .col-md-4 > div,
+#roadmap .col-md-3 > div {
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* 5. Text Colors (High Contrast) */
+h1, h2, h3, h4, h5, h6, .section-title {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+p, .lead, .text-muted, span, li {
+  color: #334155 !important;
+}
+
+/* Image Fit */
+.card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Button */
+.custom-btn {
+  background-color: #0d6efd !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 10px 24px !important;
+  font-weight: 600 !important;
+}
+
+footer {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+}
